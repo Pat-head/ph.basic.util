@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.1.0.0</Version>
+        <AssemblyName>PatHead.Basic.Util</AssemblyName>
+        <RootNamespace>PatHead.Basic.Util</RootNamespace>
+        <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+        <Description>
+            Basic Util
+        </Description>
+        <Authors>PatHead</Authors>
+        <Owners>PatHead</Owners>
+        <Title>PatHead.Basic.Util</Title>
+        <Summary>Basic Util</Summary>
+        <RepositoryUrl>https://github.com/Pat-head/ph.basic.util</RepositoryUrl>
+        <PackageId>PatHead.Basic.Util</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+</Project>
