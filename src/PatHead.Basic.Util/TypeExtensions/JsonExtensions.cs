@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace PatHead.Basic.Util.TypeExtensions
 {
-    public static class PrimitiveTypeExtensions
+    public static class JsonExtensions
     {
         public static T ToObject<T>(this string jsonStr)
         {
