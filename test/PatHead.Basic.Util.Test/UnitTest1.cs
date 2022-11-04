@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using PatHead.Basic.Util.TypeExtensions;
 using Xunit;
 
