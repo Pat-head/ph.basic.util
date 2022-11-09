@@ -3,7 +3,8 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>0.0.0.2</Version>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Version>0.0.0.3</Version>
         <AssemblyName>PatHead.Basic.Util</AssemblyName>
         <RootNamespace>PatHead.Basic.Util</RootNamespace>
         <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
