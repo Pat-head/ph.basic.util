@@ -38,7 +38,7 @@ namespace PatHead.Basic.Util
             {
                 throw new FileNotFoundException("not found path");
             }
-            
+
             CreateDirectory(destPath);
             var fsw = new FileStream(destPath, FileMode.OpenOrCreate);
             byte[] buffer = new byte[1024 * 1024];
@@ -51,6 +51,8 @@ namespace PatHead.Basic.Util
                     break;
                 }
             }
+            fsw.Dispose();
+
             stream.Seek(0, SeekOrigin.Begin);
         }
     }
