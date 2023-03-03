@@ -28,7 +28,7 @@ namespace PatHead.Basic.Util
         }
 
         /// <summary>
-        /// 创建文件
+        /// Create File
         /// </summary>
         /// <param name="destPath">文件及路径</param>
         /// <param name="stream">流</param>
@@ -51,6 +51,7 @@ namespace PatHead.Basic.Util
                     break;
                 }
             }
+
             fsw.Dispose();
 
             stream.Seek(0, SeekOrigin.Begin);

@@ -2,6 +2,9 @@
 
 namespace PatHead.Basic.Util.TypeExtensions
 {
+    /// <summary>
+    /// dateTime extensions
+    /// </summary>
     public static class DateTimeExtensions
     {
         /// <summary>
