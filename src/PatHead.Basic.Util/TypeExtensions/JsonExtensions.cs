@@ -1,5 +1,6 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace PatHead.Basic.Util.TypeExtensions
 {
@@ -29,10 +30,12 @@ namespace PatHead.Basic.Util.TypeExtensions
         /// To Json String
         /// </summary>
         /// <param name="obj"></param>
+        /// <param name="settings"></param>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string ToJson(this Object obj)
+        public static string ToJson<T>(this T obj, JsonSerializerSettings settings = null)
         {
-            return JsonConvert.SerializeObject(obj);
+            return settings == null ? JsonConvert.SerializeObject(obj) : JsonConvert.SerializeObject(obj, settings);
         }
     }
 }
