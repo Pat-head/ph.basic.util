@@ -14,16 +14,24 @@ namespace PatHead.Basic.Util.TypeExtensions
         /// </summary>
         /// <param name="jsonStr"></param>
         /// <param name="default"></param>
+        /// <param name="throwE"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T ToObject<T>(this string jsonStr, T @default = default)
+        public static T ToObject<T>(this string jsonStr, T @default = default, bool throwE = false)
         {
-            if (string.IsNullOrWhiteSpace(jsonStr))
+            if (throwE)
+            {
+                return JsonConvert.DeserializeObject<T>(jsonStr);
+            }
+
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(jsonStr);
+            }
+            catch
             {
                 return @default;
             }
-
-            return JsonConvert.DeserializeObject<T>(jsonStr);
         }
 
         /// <summary>
@@ -31,11 +39,28 @@ namespace PatHead.Basic.Util.TypeExtensions
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="settings"></param>
+        /// <param name="default"></param>
+        /// <param name="throwE"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string ToJson<T>(this T obj, JsonSerializerSettings settings = null)
+        public static string ToJson<T>(this T obj,
+            JsonSerializerSettings settings = null,
+            string @default = "",
+            bool throwE = false)
         {
-            return settings == null ? JsonConvert.SerializeObject(obj) : JsonConvert.SerializeObject(obj, settings);
+            if (throwE)
+            {
+                return settings == null ? JsonConvert.SerializeObject(obj) : JsonConvert.SerializeObject(obj, settings);
+            }
+
+            try
+            {
+                return settings == null ? JsonConvert.SerializeObject(obj) : JsonConvert.SerializeObject(obj, settings);
+            }
+            catch
+            {
+                return @default;
+            }
         }
     }
 }
